@@ -1,0 +1,25 @@
+<p>dashboard works! {{ title }}</p>
+<!-- <app-button
+  [contentBtn]="buttonContent"
+  (eventAdd)="dashboardClickBtn($event)"
+></app-button>
+<input type="text" id="hero-name" [(ngModel)]="heroName" />
+<input type="checkbox" ngModel [ngModelOptions]="{ standalone: true }" /> Show
+more options?
+<p *ngIf="isShow; then thenBlock; else elseBlock">Dieu kien If</p>
+<ng-template #thenBlock>
+  <p class="">Dieu kien Then</p>
+</ng-template>
+<ng-template #elseBlock>
+  <p class="">Dieu kien Else</p>
+</ng-template> -->
+<button (click)="show = !show">{{ show ? "hide" : "show" }}</button>
+<button (click)="switchPrimary()">Switch Primary</button>
+show = {{ show }}
+<br />
+<div *ngIf="show; then thenBlock; else elseBlock">this is ignored</div>
+<ng-template #primaryBlock>Primary text to show</ng-template>
+<ng-template #secondaryBlock>Secondary text to show</ng-template>
+<ng-template #elseBlock
+  >Alternate text while primary text is hidden</ng-template
+>

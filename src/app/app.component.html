@@ -1,0 +1,29 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style></style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <div class="nvabar-item" (click)="handleClickRouter('/home')">
+    <a routerLinkActive="router-link-active">Home</a>
+  </div>
+  <div class="nvabar-item" (click)="handleClickRouter('/dashboard')">
+    <a routerLinkActive="router-link-active">Dashboard</a>
+  </div>
+  <div class="nvabar-item" (click)="handleClickRouter('/app')">
+    <a routerLinkActive="router-link-active">App</a>
+  </div>
+  <div class="nvabar-item" (click)="handleClickRouter('/admin')">
+    <a routerLinkActive="router-link-active">Admin</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+<div *ngIf="true" class="spinner"><span>Loading...</span></div>
