@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AppService } from 'src/app/app.service';
 import { BookService } from 'src/app/book.service';
 import { Book } from 'src/model/book.model';
 export interface PeriodicElement {
@@ -33,7 +34,10 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
     this.getAll();
   }
-  constructor(private bookService: BookService) {}
+  constructor(
+    private bookService: BookService,
+    private appService: AppService
+  ) {}
   getAll() {
     this.bookService.getAll().subscribe((res: any) => {
       this.listBook = res;
@@ -44,5 +48,11 @@ export class AdminComponent implements OnInit {
   }
   getContentStatus(status: boolean) {
     return status ? 'Actived' : 'Disabled';
+  }
+  showsLoading() {
+    this.appService.setLoading(true);
+    setTimeout(() => {
+      this.appService.setLoading(false);
+    }, 300);
   }
 }
