@@ -1,0 +1,12 @@
+<!-- <div *ngIf="isOpen"> -->
+<div class="bg-modal"></div>
+<div class="container-modal">
+  <div class="wrapper-content">
+    <ng-content select=".content"></ng-content>
+  </div>
+  <div class="wrapper-btn">
+    <button (click)="handleCloseModal()">Close</button>
+    <button>Ok</button>
+  </div>
+</div>
+<!-- </div> -->

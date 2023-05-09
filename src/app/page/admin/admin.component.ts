@@ -22,16 +22,32 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
 ];
 
+const TYPE_MODAL = {
+  ADD: 1,
+  UPDATE: 2,
+  DELETE: 3,
+};
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = [
+    'position',
+    'name',
+    'weight',
+    'symbol',
+    'action',
+  ];
   dataSource = ELEMENT_DATA;
   listBook: Book[] = [];
+  isOpenModal = false;
+  TYPE_MODAL = TYPE_MODAL;
+  typeModal: number = TYPE_MODAL.ADD;
   ngOnInit(): void {
+    console.log(this.appService.abc);
     this.getAll();
   }
   constructor(
@@ -39,7 +55,9 @@ export class AdminComponent implements OnInit {
     private appService: AppService
   ) {}
   getAll() {
+    this.appService.setLoading(true);
     this.bookService.getAll().subscribe((res: any) => {
+      this.appService.setLoading(false);
       this.listBook = res;
     });
   }
@@ -54,5 +72,14 @@ export class AdminComponent implements OnInit {
     setTimeout(() => {
       this.appService.setLoading(false);
     }, 300);
+  }
+
+  handleShowModal(type: number) {
+    this.typeModal = type;
+    this.isOpenModal = true;
+  }
+
+  handleCloseModal() {
+    this.isOpenModal = false;
   }
 }

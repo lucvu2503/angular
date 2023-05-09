@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AppService {
+  abc = 'sdsdsd';
   isLoading$ = new BehaviorSubject(false);
   getIsLoading = this.isLoading$.asObservable();
   constructor() {}

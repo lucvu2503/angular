@@ -1,25 +1,56 @@
 table {
-    width: 100%;
-  }
-
-.mat-elevation-z8{
-    margin-top: 50px;
-    
-}
-.table-container{
-    padding: 100px;
-    text-align: center;
+  width: 100%;
 }
 
-
-.active{
-   padding: 10px;
-   border-radius: 8px;
-   background-color: rgb(210, 243, 212);
+.mat-elevation-z8 {
+  margin-top: 50px;
+}
+.table-container {
+  padding: 100px;
+  text-align: center;
 }
 
-.disable{
-    padding: 10px;
-    border-radius: 8px;
-    background-color: rgb(222, 220, 247);
+.status {
+  color: rgb(94, 94, 94);
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.active {
+  background-color: rgb(210, 243, 212);
+}
+
+.disable {
+  background-color: rgb(222, 220, 247);
+}
+
+.wrapper-btn-action {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: rgb(158, 235, 183);
+}
+
+.btn-update {
+  background-color: rgb(148, 150, 224);
+}
+
+.btn-delete {
+  background-color: rgb(228, 172, 150);
+}
+
+.mat-mdc-table {
+  background-color: #3e4950 !important;
+  border-radius: 10px;
 }
