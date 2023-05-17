@@ -21,7 +21,7 @@ import { HeroService } from './hero.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { AdminComponent } from './page/admin/admin.component';
+import { AdminComponent } from './page/admin/admin-list/admin.component';
 import { MatTableModule } from '@angular/material/table';
 import { BookService } from './book.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -29,8 +29,23 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ModalComponent } from './common/modal/modal.component';
 import { BgcolorDirective } from './bgcolor.directive';
 import { ModalUpdateComponent } from './common/modal-update/modal-update.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import {
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  MatFormFieldModule,
+} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { AdminDetailComponent } from './page/admin/admin-detail/admin-detail.component';
+import { AdminRoutingModule } from './page/admin/admin-routing.module';
+import { LoginComponent } from './page/login/login.component';
+import { DefaultComponent } from './layout/default/default.component';
+import { AuthComponent } from './layout/auth/auth.component';
+import { RouteLoginModule } from './page/login/route-login.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { ToastrModule } from 'ngx-toastr';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
+import { provideToastr } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,9 +61,14 @@ import { MatInputModule } from '@angular/material/input';
     ModalComponent,
     BgcolorDirective,
     ModalUpdateComponent,
+    AdminDetailComponent,
+    LoginComponent,
+    DefaultComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
+    AdminRoutingModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -68,8 +88,21 @@ import { MatInputModule } from '@angular/material/input';
     NgxSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
+    RouteLoginModule,
+    MatIconModule,
+    MatButtonModule,
+    ToastrModule.forRoot(), // ToastrModule added
   ],
-  providers: [HeroService, BookService],
+  providers: [
+    HeroService,
+    BookService,
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { floatLabel: 'always' },
+    },
+    provideAnimations(), // required animations providers
+    provideToastr(), // Toastr providers
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

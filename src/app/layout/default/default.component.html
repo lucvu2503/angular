@@ -1,0 +1,51 @@
+<div class="row p-5 d-flex align-item-center">
+  <div class="wrapper-logo col-5">
+    <img
+      src="../../../assets/favpng_fpt-group-computer-software-software-development-information-technology-fpt-software.png"
+      style="width: 100px"
+    />
+  </div>
+  <div class="wrapper-feature col-4 d-flex justify-content-between">
+    <div class="nvabar-item" (click)="handleClickRouter('/home')">
+      <a routerLinkActive="router-link-active">Home</a>
+    </div>
+    <div class="nvabar-item" (click)="handleClickRouter('/dashboard')">
+      <a routerLinkActive="router-link-active">Dashboard</a>
+    </div>
+    <div class="nvabar-item" (click)="handleClickRouter('/app')">
+      <a routerLinkActive="router-link-active">App</a>
+    </div>
+    <div class="nvabar-item" (click)="handleClickRouter('/admin')">
+      <a routerLinkActive="router-link-active">Admin</a>
+    </div>
+  </div>
+  <div *ngIf="!isLogin" class="wrapper-auth col-3 d-flex justify-content-end">
+    <div class="nvabar-item" (click)="handleClickRouter('/login')">
+      <a routerLinkActive="router-link-active">Login</a>
+    </div>
+  </div>
+  <div *ngIf="isLogin" class="dropdown col-3 d-flex justify-content-end">
+    <div
+      class="dropdown-toggle wrapper-auth"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <mat-icon class="icon-auth">account_circle</mat-icon>
+      <span class="auth-username">{{ username }}</span>
+    </div>
+    <ul class="dropdown-menu">
+      <li class="d-flex p-2">
+        <div class="dropdown-item">
+          <mat-icon class="">person</mat-icon><a href="#">Profile</a>
+        </div>
+      </li>
+      <li class="d-flex p-2">
+        <div class="dropdown-item" (click)="handleLogout()">
+          <mat-icon class="">logout</mat-icon><a href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

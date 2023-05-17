@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import { BookService } from 'src/app/book.service';
 import { Book } from 'src/model/book.model';
@@ -47,12 +48,12 @@ export class AdminComponent implements OnInit {
   TYPE_MODAL = TYPE_MODAL;
   typeModal: number = TYPE_MODAL.ADD;
   ngOnInit(): void {
-    console.log(this.appService.abc);
     this.getAll();
   }
   constructor(
     private bookService: BookService,
-    private appService: AppService
+    private appService: AppService,
+    private router: Router
   ) {}
   getAll() {
     this.appService.setLoading(true);
@@ -61,12 +62,7 @@ export class AdminComponent implements OnInit {
       this.listBook = res;
     });
   }
-  getClassName(status: boolean) {
-    return status ? 'active' : 'disable';
-  }
-  getContentStatus(status: boolean) {
-    return status ? 'Actived' : 'Disabled';
-  }
+
   showsLoading() {
     this.appService.setLoading(true);
     setTimeout(() => {
@@ -77,6 +73,14 @@ export class AdminComponent implements OnInit {
   handleShowModal(type: number) {
     this.typeModal = type;
     this.isOpenModal = true;
+  }
+
+  handleRedirectToDetail(id: any) {
+    this.router.navigate([`/${id}/detail`]);
+  }
+
+  handleRedirectToAdd() {
+    this.router.navigate([`/add`]);
   }
 
   handleCloseModal() {

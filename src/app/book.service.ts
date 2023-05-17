@@ -23,4 +23,16 @@ export class BookService {
       .get<Book[]>(environment.URL_API + 'book', httpOptions)
       .pipe();
   }
+
+  getBookById(id: string): Observable<Book[]> {
+    return this.httpClient
+      .get<Book[]>(environment.URL_API + 'book/' + id, httpOptions)
+      .pipe();
+  }
+
+  getListUser(): Observable<any[]> {
+    return this.httpClient
+      .get<any[]>(environment.URL_API + 'user', httpOptions)
+      .pipe();
+  }
 }

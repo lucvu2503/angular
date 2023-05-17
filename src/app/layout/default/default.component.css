@@ -1,0 +1,79 @@
+.toolbar {
+  margin-top: 3%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  float: left;
+}
+
+.nvabar-item {
+  background-color: #fb8f1d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nvabar-item a {
+  width: 100px;
+  height: 50px;
+  text-decoration: none;
+  color: white !important;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.spinner {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner span {
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.wrapper-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-auth {
+  color: #fb8f1d;
+  font-size: 40px;
+  width: 38px;
+  height: 38px;
+}
+
+.auth-username {
+  color: #fb8f1d;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-item a {
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+}
