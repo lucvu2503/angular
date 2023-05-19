@@ -5,8 +5,10 @@
     <ng-content select=".content"></ng-content>
   </div>
   <div class="wrapper-btn">
-    <button (click)="handleCloseModal()">Close</button>
-    <button>Ok</button>
+    <button mat-raised-button (click)="handleCloseModal()" color="warn">
+      Close
+    </button>
+    <button mat-raised-button color="accent">Ok</button>
   </div>
 </div>
 <!-- </div> -->

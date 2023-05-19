@@ -2,6 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AppService } from './app.service';
+import { AdminDetailComponent } from './page/admin/admin-detail/admin-detail.component';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,7 @@ import { AppService } from './app.service';
 export class AppComponent implements OnInit {
   title = 'my-app';
   isLoading = false;
-  constructor(
-    private router: Router,
-    private spinner: NgxSpinnerService,
-    private appService: AppService
-  ) {}
+  constructor(private router: Router, private appService: AppService) {}
   // ngDoCheck(): void {
   //   this.isLoading = this.appService.isLoading2;
   // }
@@ -27,7 +24,9 @@ export class AppComponent implements OnInit {
       this.isLoading = value;
     });
   }
-
+  testInjectchild() {
+    console.log('testInjectchild');
+  }
   handleClickRouter(path: string): void {
     this.router.navigate([path]);
   }

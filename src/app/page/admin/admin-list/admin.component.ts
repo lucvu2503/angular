@@ -76,11 +76,11 @@ export class AdminComponent implements OnInit {
   }
 
   handleRedirectToDetail(id: any) {
-    this.router.navigate([`/${id}/detail`]);
+    this.router.navigate([`admin/${id}/detail`]);
   }
 
   handleRedirectToAdd() {
-    this.router.navigate([`/add`]);
+    this.router.navigate([`admin/add`]);
   }
 
   handleCloseModal() {

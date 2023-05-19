@@ -21,8 +21,6 @@ export class HeroesComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     const mashup = of('anything', 3);
-
-    mashup.subscribe((val) => console.log(val));
     this.getHeroes();
   }
   onSelect(hero: any): void {

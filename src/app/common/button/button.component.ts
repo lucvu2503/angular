@@ -11,12 +11,9 @@ export class ButtonComponent implements OnInit {
   contentBtn = 'Default';
   @Output() eventAdd = new EventEmitter();
   constructor(private router: Router) {}
-  ngOnInit(): void {
-    console.log('ngOnInit buttuon');
-  }
+  ngOnInit(): void {}
 
   handleClickBtn(value: string) {
-    console.log('click', value);
     this.router.navigate(['/admin'], {
       queryParams: {
         adbc: 0,

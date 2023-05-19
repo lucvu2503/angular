@@ -46,6 +46,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { provideToastr } from 'ngx-toastr';
+import {
+  ErrorStateMatcher,
+  ShowOnDirtyErrorStateMatcher,
+} from '@angular/material/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,6 +107,7 @@ import { provideToastr } from 'ngx-toastr';
     },
     provideAnimations(), // required animations providers
     provideToastr(), // Toastr providers
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
   ],
   bootstrap: [AppComponent],
 })

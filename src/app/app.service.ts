@@ -5,12 +5,14 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class AppService {
   isLoading$ = new BehaviorSubject(false);
+  userName$ = new BehaviorSubject(localStorage.getItem('email'));
   getIsLoading = this.isLoading$.asObservable();
   constructor() {}
 
   setLoading(value: boolean) {
-    console.log('okokokkkkkkkkkkk');
-
     this.isLoading$.next(value);
+  }
+  setUsername(value: string) {
+    this.userName$.next(value);
   }
 }

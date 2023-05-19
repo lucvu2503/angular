@@ -1,4 +1,15 @@
 <div class="table-container">
+  <mat-icon
+    (click)="handleRedirectToAdd()"
+    style="
+      width: 40px;
+      height: 40px;
+      color: rgb(51, 55, 77);
+      font-size: 40px;
+      cursor: pointer;
+    "
+    >library_add</mat-icon
+  >
   <table mat-table [dataSource]="listBook" class="mat-elevation-z8">
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -32,15 +43,8 @@
         <div class="wrapper-btn-action">
           <button
             mat-raised-button
-            (click)="handleRedirectToAdd()"
+            (click)="handleRedirectToDetail(element.id)"
             color="primary"
-          >
-            Add
-          </button>
-          <button
-            mat-raised-button
-            (cick)="handleRedirectToDetail(element.id)"
-            color="accent"
           >
             Update
           </button>

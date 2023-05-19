@@ -1,11 +1,14 @@
-<div class="row p-5 d-flex align-item-center">
+<div class="row p-5 d-flex align-item-center w-100">
   <div class="wrapper-logo col-5">
     <img
       src="../../../assets/favpng_fpt-group-computer-software-software-development-information-technology-fpt-software.png"
       style="width: 100px"
     />
   </div>
-  <div class="wrapper-feature col-4 d-flex justify-content-between">
+  <div
+    class="wrapper-feature col-4 d-flex justify-content-between"
+    id="fake_id"
+  >
     <div class="nvabar-item" (click)="handleClickRouter('/home')">
       <a routerLinkActive="router-link-active">Home</a>
     </div>
@@ -25,11 +28,7 @@
     </div>
   </div>
   <div *ngIf="isLogin" class="dropdown col-3 d-flex justify-content-end">
-    <div
-      class="dropdown-toggle wrapper-auth"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
+    <div class="wrapper-auth" data-bs-toggle="dropdown" aria-expanded="false">
       <mat-icon class="icon-auth">account_circle</mat-icon>
       <span class="auth-username">{{ username }}</span>
     </div>

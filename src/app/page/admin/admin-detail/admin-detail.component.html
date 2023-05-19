@@ -1,38 +1,35 @@
 <div class="wrapper-form mt-5">
-  <div class="form" [formGroup]="bookForm">
-    <!-- <div class="mb-3">
+  <form class="form" [formGroup]="bookForm">
+    <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">ID</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
         id="exampleFormControlInput1"
         placeholder="ID"
-        [(ngModel)]="bookDetail.id"
-        formControlName="cost"
+        formControlName="id"
       />
-    </div> -->
+    </div>
     <div class="mb-3">
       <label for="exampleFormControlInput2" class="form-label">Cost</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
         id="exampleFormControlInput2"
         placeholder="Cost"
-        [(ngModel)]="bookDetail.cost"
         formControlName="cost"
       />
     </div>
-    <!-- <div class="mb-3">
+    <div class="mb-3">
       <label for="exampleFormControlInput3" class="form-label"
         >Description</label
       >
       <textarea
-        type="email"
+        type="text"
         class="form-control"
         id="exampleFormControlInput3"
         placeholder="Description"
-        [(ngModel)]="bookDetail.description"
-        formControlName="cost"
+        formControlName="description"
       ></textarea>
     </div>
     <div class="mb-3">
@@ -44,18 +41,17 @@
           role="switch"
           id="flexSwitchCheckDefault"
           style="transform: scale(1.4); margin-left: -2em"
-          [(ngModel)]="bookDetail.status"
-          formControlName="cost"
+          formControlName="status"
         />
       </div>
-    </div> -->
-    <div class="wrapper-btn">
-      <button>Update</button>
     </div>
-  </div>
+    <div class="wrapper-btn">
+      <button mat-raised-button color="primary">Update</button>
+    </div>
+  </form>
 </div>
 
-<h2>Reactive Form</h2>
+<!-- <h2>Reactive Form</h2>
 
 <form [formGroup]="heroForm" #formDir="ngForm">
   <div [hidden]="formDir.submitted">
@@ -141,4 +137,4 @@
 <div class="submitted-message" *ngIf="formDir.submitted">
   <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
   <button type="button" (click)="formDir.resetForm({})">Add new hero</button>
-</div>
+</div> -->

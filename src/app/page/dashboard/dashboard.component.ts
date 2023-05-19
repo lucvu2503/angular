@@ -6,6 +6,8 @@ import {
   TemplateRef,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AppService } from 'src/app/app.service';
+import { AdminDetailComponent } from '../admin/admin-detail/admin-detail.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -30,14 +32,14 @@ export class DashboardComponent implements OnInit {
         ? this.secondaryBlock
         : this.primaryBlock;
   }
-  constructor() {}
+  constructor(private appService: AppService) {}
   ngOnInit(): void {
     this.thenBlock = this.primaryBlock;
     // this.title = "okkok"
     // this.getHero();
   }
-  dashboardClickBtn(value: any) {
-    console.log('click dashboardClickBtn');
-    // this.isShow = !this.isShow;
+  dashboardClickBtn(value: any) {}
+  changEmail() {
+    this.appService.setUsername('Lucvx');
   }
 }

@@ -19,13 +19,17 @@ class PermissionsService {
     state: RouterStateSnapshot
   ): boolean {
     //your logic goes here
-    console.log(next);
-    console.log(state);
+    const isPageLogin = next.routeConfig?.path === 'login';
 
     if (localStorage.getItem('jwt')) {
-      // this.router.navigate(['']);
+      if (isPageLogin) {
+        this.router.navigate(['']);
+      }
       return true;
     } else {
+      if (!isPageLogin) {
+        this.router.navigate(['login']);
+      }
       return true;
     }
   }
